@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-from calculator_1 import add, sub, mul, div
-import sys
 if __name__ == "__main__":
+import sys
+from calculator_1 import add, sub, mul, div
     args = sys.argv[1:]
     totarg = len(args)
     if totarg != 3:
