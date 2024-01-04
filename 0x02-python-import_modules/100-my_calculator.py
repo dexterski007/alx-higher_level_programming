@@ -15,7 +15,7 @@ if __name__ == "__main__":
         print("{} - {} = {}".format(a, b, sub(a, b)))
     elif args[1] == '*':
         print("{} * {} = {}".format(a, b, mul(a, b)))
-    elif args[1] == '*':
+    elif args[1] == '/':
         print("{} / {} = {}".format(a, b, div(a, b)))
     else:
         print("Unknown operator. Available operators: +, -, * and /")
