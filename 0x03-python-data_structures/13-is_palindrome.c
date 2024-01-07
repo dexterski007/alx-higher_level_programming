@@ -3,7 +3,7 @@
 #include "lists.h"
 
 /**
- * is_palindrome - check the code for
+ * is_palindrome - check the code for palind
  *
  * @head: head
  *
@@ -14,26 +14,28 @@ int is_palindrome(listint_t **head)
 {
 	if (*head == NULL || (*head)->next == NULL)
 		return (1);
-	return (aux_palind(head, *head));
+	return (check_palind(head, *head));
 }
 
 
 /**
- * aux_palind - check the code for
+ * check_palind - check the code for
  *
  * @head: head
  *
- * @end: end list
+ * @final: final of list
+ *
+ * Return: 0 or 1
  */
 
-int aux_palind(listint_t **head, listint_t *end)
+int check_palind(listint_t **head, listint_t *final)
 {
-	if (end == NULL)
+	if (final == NULL)
 		return (1);
-	if (aux_palind(head, end->next) && (*head)->n == end->n)
+	if (check_palind(head, final->next) && (*head)->n == final->n)
 	{
 		*head = (*head)->next;
-		return(1);
+		return (1);
 	}
 	return (0);
 }
