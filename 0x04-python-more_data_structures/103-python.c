@@ -13,22 +13,22 @@ void print_python_list(PyObject *p)
 {
 	int sze, allocat, j;
 	const char *typ;
-	PyListObject *list = (PyListObject *)p;
+	PyListObject *lst = (PyListObject *)p;
 	PyVarObject *var = (PyVarObject *)p;
 
 	sze = var->ob_size;
-	allocat = list->allocated;
+	allocat = lst->allocated;
 
 	printf("[*] Python list info\n");
-	printf("[*] Size of the Python list = %d\n", sze);
+	printf("[*] Size of the Python List = %d\n", sze);
 	printf("[*] Allocated = %d\n", allocat);
 
 	for (j = 0; j < sze; j++)
 	{
-		typ = list->ob_item[j]->ob_type->tp_name;
+		typ = lst->ob_item[j]->ob_type->tp_name;
 		printf("Element %d: %s\n", j, typ);
 		if (strcmp(typ, "bytes") == 0)
-			print_python_bytes(list->ob_item[j]);
+			print_python_bytes(lst->ob_item[j]);
 	}
 }
 
