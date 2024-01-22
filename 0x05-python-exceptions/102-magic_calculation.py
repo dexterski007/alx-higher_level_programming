@@ -2,7 +2,7 @@
 
 def magic_calculation(a, b):
     result = 0
-    for i in range(1,3):
+    for i in range(1, 3):
         try:
             if i > a:
                 raise IndexError("Too far")
@@ -10,5 +10,4 @@ def magic_calculation(a, b):
         except IndexError:
             result = a + b
             break
-        finally:
-            return result
+    return result
