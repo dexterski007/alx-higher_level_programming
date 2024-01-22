@@ -16,13 +16,20 @@ void print_python_list(PyObject *p)
 {
 	int sze, allocat, j;
 	const char *typ;
+
+	setbuf(stdout, NULL);
 	PyListObject *lst = (PyListObject *)p;
 	PyVarObject *var = (PyVarObject *)p;
 
-	sze = var->ob_size;
+	sze = ((PyVarObject *)p)->ob_size;
 	allocat = lst->allocated;
 
 	printf("[*] Python list info\n");
+	if (strcmp(p->ob_type->tp_name, "list"))
+	{
+		printf("  [ERROR] Invalid List Object\n");
+		return;
+	}
 	printf("[*] Size of the Python List = %d\n", sze);
 	printf("[*] Allocated = %d\n", allocat);
 
