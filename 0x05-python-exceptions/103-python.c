@@ -1,6 +1,7 @@
-#include <Python.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <Python.h>
+#include <floatobject.h>
 
 void print_python_list(PyObject *p);
 void print_python_bytes(PyObject *p);
@@ -86,6 +87,6 @@ void print_python_float(PyObject *p)
 		return;
 	}
 	k = ((PyFloatObject *)p)->ob_fval;
-		printf("  value: %s\n", PyOS_double_to_string(k, 'r', 0, Py_DTSF_ADD_DDOT_0, NULL));
+		printf("  value: %s\n", PyOS_double_to_string(k, 'r', 0, Py_DTSF_ADD_DOT_0, NULL));
 }
 
