@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 
-"""
-class square - is defining a square
-"""
+""" square - is defining a square """
 
 
 class Square:
+    """ this is a square """
     pass
