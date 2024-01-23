@@ -5,8 +5,8 @@ import math
 
 class MagicClass:
     """ this is magic """
-    def __init__(self, radius=None):
-        if not isinstance(radius, (int, float)):
+    def __init__(self, radius):
+        if not None and not isinstance(radius, (int, float)):
             raise TypeError("radius must be a number")
         self.radius = radius
     
