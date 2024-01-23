@@ -64,9 +64,9 @@ class SinglyLinkedList:
 
     def __str__(self):
         """ print data """
-        result = ""
+        result = []
         current = self.__head
         while current is not None:
-            result += str(current.data) + "\n"
+            result.append(str(current.data))
             current = current.next_node
-        return result
+        return ('\n'.join(result))
