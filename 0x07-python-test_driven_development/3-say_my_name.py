@@ -4,16 +4,16 @@
 
 
 def say_my_name(first_name, last_name=""):
-    """ 
+    """
     This module says my name
-    Args: 
+    Args:
         first_name: first name
         last_name: last name (can be empty)
     Returns: my name is first_name last_name
     Raises:
-
+        TypeError if
     """
-    
+
     if not isinstance(first_name, str):
         raise TypeError("first_name must be a string")
     if not isinstance(last_name, str):

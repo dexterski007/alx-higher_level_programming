@@ -6,7 +6,7 @@ Using ``3-say_my_name``
 
 import function from module:
 
-    >>> matrix_divided = __import__('3-say_my_name').say_my_name
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
 
 Test name:
 
@@ -16,7 +16,7 @@ Test name:
 Test emptyness:
 
     >>> say_my_name("", "")
-    My name is 
+    My name is  
 
 Test first name:
 
@@ -57,7 +57,7 @@ Test nonstr3:
 Test emptyness3:
 
     >>> say_my_name("", "Bond")
-    My name is Bond
+    My name is  Bond
 
 Test Void:
 
