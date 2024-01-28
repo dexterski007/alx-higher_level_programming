@@ -1,0 +1,67 @@
+This ``3-say_my_name`` module
+=============================
+
+Using ``3-say_my_name``
+-----------------------
+
+import function from module:
+
+    >>> matrix_divided = __import__('3-say_my_name').say_my_name
+
+Test name:
+
+    >>> say_my_name("James", "Bond")
+    My name is James Bond
+
+Test emptyness:
+
+    >>> say_my_name("", "")
+    My name is 
+
+Test first name:
+
+    >>> say_my_name("James")
+    My name is James 
+
+Test emptyness:
+
+    >>> say_my_name("James", "")
+    My name is James 
+
+Test spacex:
+
+    >>> say_my_name("    ", "    ")
+    My name is          
+
+Test nonstr:
+
+    >>> say_my_name(99, 99)
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+Test nonstr2:
+
+    >>> say_my_name(99, "Bond")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+Test nonstr3:
+
+    >>> say_my_name("James", 99)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
+Test emptyness3:
+
+    >>> say_my_name("", "Bond")
+    My name is Bond
+
+Test Void:
+
+    >>> say_my_name()
+    Traceback (most recent call last):
+    ...
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
