@@ -47,13 +47,13 @@ def matrix_mul(m_a, m_b):
         raise ValueError("m_a can't be empty")
     if len(m_b) == 0 or (len(m_b) == 1 and len(m_b[0]) == 0):
         raise ValueError("m_b can't be empty")
-    if a_num == True:
+    if a_num:
         raise TypeError("m_a should contain only integers or floats")
-    if b_num == True:
+    if b_num:
         raise TypeError("m_b should contain only integers or floats")
-    if a_rect == True:
+    if a_rect:
         raise TypeError("each row of m_a must be of the same size")
-    if b_rect == True:
+    if b_rect:
         raise TypeError("each row of m_b must be of the same size")
     if len(m_a[0]) != len(m_b):
         raise ValueError("m_a and m_b can't be multiplied")
@@ -67,6 +67,7 @@ def matrix_mul(m_a, m_b):
                 counter += m_a[i][n] * m_b[n][j]
             sol[i].append(counter)
     return sol
+
 
 if __name__ == "__main__":
     import doctest
