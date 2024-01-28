@@ -1,30 +1,37 @@
 #!/usr/bin/python3
 
-""" This module divides a matrix by a dividor
-    Args: matrix: the matrix
-        div: neo the divider
-    Returns:  the divided matrix
-"""
+"""divides a matrix by divider"""
 
 
 def matrix_divided(matrix, div):
-    """
-    adds 2 integers or floats
-    """
+    """ 
+    This module divides a matrix by a dividor
+    Args: 
+        matrix: the matrix
+        div: neo the divider
+    Returns:  the divided matrix
+    Raises:
 
-    c = a
-    d = b
-    if not isinstance(a, (int, float)):
-        raise TypeError("a must be an integer")
-    if not isinstance(b, (int, float)):
-        raise TypeError("b must be an integer")
-    if isinstance(a, float):
-        c = int(a)
-    if isinstance(b, float):
-        d = int(b)
-    return c + d
+    """
+    
+    if (not isinstance(matrix, list) or len(matrix) == 0 or \
+        not all(isinstance(line, list) for line in matrix) or \
+        not all(isinstance(i, (int, float)) for i in [n for line\
+            in matrix for n in line])):
+        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+    if not isinstance(div, (int, float)):
+        raise TypeError("div must be a number")
+    if div == 0:
+        raise ZeroDivisionError("division by zero")
+    for line in matrix:
+        if len(line) != len(matrix[0]):
+            raise TypeError("Each row of the matrix must have the same size")
+       
+    matrix2 = [[round(i / div, 2) for i in line] for line in matrix]
+    return matrix2
+
 
 
 if __name__ == "__main__":
     import doctest
-    doctest.testfile("tests/0-add_integer.txt")
+    doctest.testfile("tests/2-matrix_divided.txt")

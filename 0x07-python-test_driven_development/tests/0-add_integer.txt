@@ -13,6 +13,11 @@ Test One int argument:
 	>>> add_integer(10)
 	108
 
+Test negative floats:
+
+	>>> add_integer(-10.5, -20.5)
+	-30
+
 Test default second:
 
 	>>> add_integer(0)
@@ -43,6 +48,54 @@ Test non float or int entry:
 	>>> add_integer("hello","world")
 	Traceback (most recent call last):
 	TypeError: a must be an integer
+
+Test none:
+
+	>>> add_integer(None)
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+Test none2:
+
+	>>> add_integer(2, None)
+	Traceback (most recent call last):
+	TypeError: b must be an integer
+
+Test inf:
+
+	>>> add_integer(float('inf'))
+	Traceback (most recent call last):
+	OverflowError: cannot convert float infinity to integer
+
+Test inf2:
+
+	>>> add_integer(5, float('inf'))
+	Traceback (most recent call last):
+	OverflowError: cannot convert float infinity to integer
+
+Test inf3:
+
+	>>> add_integer(5, float('-inf'))
+	Traceback (most recent call last):
+	OverflowError: cannot convert float infinity to integer
+
+Test NaN:
+
+	>>> add_integer(float('nan'))
+	Traceback (most recent call last):
+	ValueError: cannot convert float NaN to integer
+
+Test NaN2:
+
+	>>> add_integer(5, float('nan'))
+	Traceback (most recent call last):
+	ValueError: cannot convert float NaN to integer
+
+Test non float or int entry:
+
+	>>> add_integer(4, "world")
+	Traceback (most recent call last):
+	TypeError: b must be an integer
 	
 Test negative and positive numbers:
 

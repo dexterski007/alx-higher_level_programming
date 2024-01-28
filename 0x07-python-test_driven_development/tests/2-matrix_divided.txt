@@ -1,55 +1,141 @@
-This ``0-add_integer`` module
+This ``2-matrix_divided`` module
 =============================
 
-Using ``0-add_integer``
+Using ``2-matrix_divided``
 -----------------------
 
 import function from module:
 
-	>>> add_integer = __import__('0-add_integer').add_integer
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
 
-Test One int argument:
+Test int argument:
 
-	>>> add_integer(10)
-	108
+    >>> matrix = [
+    ...     [1, 2, 3],
+    ...     [4, 5, 6]
+    ... ]
+    >>> print(matrix_divided(matrix, 2))
+    [[0.5, 1.0, 1.5], [2.0, 2.5, 3.0]]
 
-Test default second:
+Test rounded:
 
-	>>> add_integer(0)
-	98
+    >>> matrix = [
+    ...     [1, 2, 3],
+    ...     [4, 5, 6]
+    ... ]
+    >>> print(matrix_divided(matrix, 9))
+    [[0.11, 0.22, 0.33], [0.44, 0.56, 0.67]]
 
-Test two float arguments:
+Test origin:
 
-	>>> add_integer(105.8, 22.6)
-	127
+    >>> print(matrix)
+    [[1, 2, 3], [4, 5, 6]]
 
-Test one float argument:
+Test empty matrix:
 
-	>>> add_integer(105.8)
-	203
+    >>> matrix = None
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
 
-Test two integers:
+Test div by zero:
 
-	>>> add_integer(44, 22)
-	66
+    >>> matrix = [
+    ...     [1, 2, 3],
+    ...     [4, 5, 6]
+    ... ]
+    >>> print(matrix_divided(matrix, 0))
+    Traceback (most recent call last):
+    ZeroDivisionError: division by zero
 
-Test two big numbers:
+Test div is number:
 
-	>>> add_integer(999999999, 999999998)
-	1999999997
+    >>> matrix = [
+    ...     [1, 2, 3],
+    ...     [4, 5, 6]
+    ... ]
+    >>> print(matrix_divided(matrix, "hello"))
+    Traceback (most recent call last):
+    TypeError: div must be a number
 
-Test non float or int entry:
+Test div is None:
 
-	>>> add_integer("hello","world")
-	Traceback (most recent call last):
-	TypeError: a must be an integer
-	
-Test negative and positive numbers:
+    >>> matrix = [
+    ...     [1, 2, 3],
+    ...     [4, 5, 6]
+    ... ]
+    >>> print(matrix_divided(matrix, None))
+    Traceback (most recent call last):
+    TypeError: div must be a number
 
-	>>> add_integer(-200, 100)
-	-100
+Test matrix is uneven:
 
-Test int and float:
+    >>> matrix = [
+    ...     [1, 2, 3],
+    ...     [4, 5]
+    ... ]
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: Each row of the matrix must have the same size
 
-	>>> add_integer(50, 50.2)
-	100
+Test matrix is not int or float:
+
+    >>> matrix = [
+    ...     [1, 2, 3],
+    ...     [4, "hey", "test"]
+    ... ]
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test matrix is none:
+
+    >>> matrix = None
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test matrix is empty:
+
+    >>> matrix = []
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test matrix is empty:
+
+    >>> matrix = [[]]
+    >>> print(matrix_divided(matrix, 3))
+    [[]]
+
+Test matrix is string:
+
+    >>> matrix = "hello, world"
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test matrix is a list:
+
+    >>> matrix = [5, 2, 4]
+    >>> print(matrix_divided(matrix, 8))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test matrix is floats:
+
+    >>> matrix = [
+    ...     [1.1, -2.2, 3.3],
+    ...     [4.4, 5.5, -6.6]
+    ... ]
+    >>> print(matrix_divided(matrix, 5))
+    [[0.22, -0.44, 0.66], [0.88, 1.1, -1.32]]
+
+Test matrix is floats and int:
+
+    >>> matrix = [
+    ...     [1.1, 5, 3.3],
+    ...     [4.4, 5.5, -6.6]
+    ... ]
+    >>> print(matrix_divided(matrix, 5))
+    [[0.22, 1.0, 0.66], [0.88, 1.1, -1.32]]
