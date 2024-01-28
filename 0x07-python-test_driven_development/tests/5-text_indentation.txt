@@ -54,3 +54,10 @@ Test paragraph:
     Eum ea detracto explicari.
     <BLANKLINE>
     Natum principes vim at, sea cu aeterno admodum! Te sea probo accusamus, sit in quod propriae assueverit, in per agam latine constituto!
+
+Test space before and after:
+    >>> text_indentation("       hello.     world?     ")
+    hello.
+    <BLANKLINE>
+    world?
+    <BLANKLINE>    
