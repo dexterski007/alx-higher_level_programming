@@ -1,0 +1,48 @@
+The ``5-text_indentation`` module
+============================
+
+Using ``text_indentation``
+---------------------
+
+Import module:
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Test normal:
+    >>> text_indentation("Bond James")
+    Bond James
+
+Test with ?:
+    >>> text_indentation("Bond James?")
+    Bond James?
+    <BLANKLINE>
+
+Test str with spaces:
+    >>> text_indentation("     Hey.")
+    Hey.
+    <BLANKLINE>
+
+Test str with spaces:
+    >>> text_indentation("Hey      .")
+    Hey      .
+    <BLANKLINE>
+
+Test str with newline:
+    >>> text_indentation("Hey \n there.")
+    Hey 
+    there.
+    <BLANKLINE>
+
+Test str with not text:
+    >>> text_indentation(6)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+Test str with not text:
+    >>> text_indentation({"Mamma": 1, "Mia": 3})
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+Test str with none:
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    TypeError: text must be a string
