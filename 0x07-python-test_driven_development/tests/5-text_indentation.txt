@@ -46,3 +46,11 @@ Test str with none:
     >>> text_indentation(None)
     Traceback (most recent call last):
     TypeError: text must be a string
+
+Test paragraph:
+    >>> text_indentation("Habeo debet quo an, nam ex cibo honestatis signiferumque. Eum ea detracto explicari. Natum principes vim at, sea cu aeterno admodum! Te sea probo accusamus, sit in quod propriae assueverit, in per agam latine constituto!")
+    Habeo debet quo an, nam ex cibo honestatis signiferumque.
+    <BLANKLINE>
+    Eum ea detracto explicari.
+    <BLANKLINE>
+    Natum principes vim at, sea cu aeterno admodum! Te sea probo accusamus, sit in quod propriae assueverit, in per agam latine constituto!
