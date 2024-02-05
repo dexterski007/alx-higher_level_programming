@@ -29,7 +29,6 @@ test area 0 aargs:
 	Traceback (most recent call last):
 	TypeError: area() missing 1 required positional argument: 'self'
 
-
 test area aargs:
 	>>> bg.area(55)
 	Traceback (most recent call last):
@@ -52,6 +51,9 @@ check the output normal int:
 
 check the output normal int:
 	>>> bg.integer_validator("", 17)
+
+check the output emptu int:
+	>>> bg.integer_validator(None, 17)
 
 check the output 0 int:
 	>>> bg.integer_validator("age", 0)
