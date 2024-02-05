@@ -74,6 +74,11 @@ check the args2:
 	Traceback (most recent call last):
 	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
+check the args3:
+	>>> bg.__class__.integer_validator()
+	Traceback (most recent call last):
+	TypeError: integer_validator() missing 3 required positional arguments: 'self', 'name', and 'value'
+
 check the output bool:
 	>>> bg.integer_validator("age", True)
 	Traceback (most recent call last):
@@ -88,3 +93,4 @@ check the output list:
 	>>> bg.integer_validator("age", [6])
 	Traceback (most recent call last):
 	TypeError: age must be an integer
+
