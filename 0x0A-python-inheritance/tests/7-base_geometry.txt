@@ -11,3 +11,10 @@ test classtype
 	>>> bg = BaseGeometry()
 	>>> type(bg) == BaseGeometry
 	True
+
+test area
+---------
+
+test areaa is instance method
+	>>> type(BaseGeometry.__dict__['area'])
+	<class 'function'>
