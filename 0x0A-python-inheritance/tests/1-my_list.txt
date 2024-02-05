@@ -37,3 +37,8 @@ test original unchanged:
 	[1, 2, 3, 4, 5]
 	>>> new_list
 	[1, 4, 2, 3, 5]
+
+test negative:
+	>>> new_list = MyList([1, 4, -2, 3, -5])
+	>>> new_list.print_sorted()
+	[-5, -2, 1, 3, 4]
