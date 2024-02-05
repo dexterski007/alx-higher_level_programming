@@ -20,3 +20,6 @@ test area normal:
 	Traceback (most recent call last):
 	Exception: area() is not implemented
 
+test area function:
+	>>> type(BaseGeometry.__dict__['area'])
+	<class 'function'>
