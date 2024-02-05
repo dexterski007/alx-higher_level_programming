@@ -1,0 +1,13 @@
+``7-base_geometry`` tests
+=========================
+
+using ``7-base_geometry``
+-------------------------
+
+Import from module:
+	>>> BaseGeometry = __import__('7-baase_geometry').BaseGeometry
+
+test classtype
+	>>> bg = BaseGeometry()
+	>>> type(bg) == BaseGeometry
+	True
