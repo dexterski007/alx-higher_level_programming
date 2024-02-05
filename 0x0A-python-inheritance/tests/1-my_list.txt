@@ -1,0 +1,27 @@
+``1-my_list`` module tests
+==========================
+
+using  ``1-my_list``
+--------------------
+
+Import from module:
+	>>> MyList = __import__('1-my_list').MyList
+
+test instance:
+	>>> new_list = MyList()
+	>>> print(isinstance(new_list, list))
+	True
+
+test type:
+	>>> new_list = MyList()
+	>>> print(type(new_list) == MyList)
+	True
+
+test function:
+	>>> print(type(MyList.__dict__['print_sorted']))
+	<class 'function'>
+
+test empty:
+	>>> new_list = MyList()
+	>>> new_list.print_sorted()
+	[]
