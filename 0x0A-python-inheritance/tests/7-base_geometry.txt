@@ -30,3 +30,8 @@ test integer
 test int function:
 	>>> type(BaseGeometry.__dict__['integer_validator'])
 	<class 'function'>
+
+check the output name:
+	>>> bg.integer_validator("hey", "john")
+	Traceback (most recent call last):
+	TypeError: hey must be an integer
