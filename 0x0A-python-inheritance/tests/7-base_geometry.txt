@@ -38,3 +38,13 @@ check the output str:
 
 check the output normal int:
 	>>> bg.integer_validator("age", 17)
+
+check the output 0 int:
+	>>> bg.integer_validator("age", 0)
+	Traceback (most recent call last):
+	ValueError: age must be greater than 0
+
+check the output neg int:
+	>>> bg.integer_validator("age", -55)
+	Traceback (most recent call last):
+	ValueError: age must be greater than 0
