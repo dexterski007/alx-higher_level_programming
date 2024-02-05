@@ -25,3 +25,9 @@ test empty:
 	>>> new_list = MyList()
 	>>> new_list.print_sorted()
 	[]
+
+test normal:
+	>>> new_list = MyList([1, 4, 2, 3, 5])
+	>>> new_list.print_sorted()
+	[1, 2, 3, 4, 5]
+
