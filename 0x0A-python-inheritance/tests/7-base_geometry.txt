@@ -23,3 +23,10 @@ test area normal:
 test area function:
 	>>> type(BaseGeometry.__dict__['area'])
 	<class 'function'>
+
+test integer
+------------
+
+test int function:
+	>>> type(BaseGeometry.__dict__['integer_validator'])
+	<class 'function'>
