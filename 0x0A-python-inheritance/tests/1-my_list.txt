@@ -52,3 +52,9 @@ test without args:
 	>>> new_list.__class__.print_sorted()
 	Traceback (most recent call last):
 	TypeError: print_sorted() missing 1 required positional argument: 'self'
+
+test append:
+	>>> new_list = MyList()
+	>>> new_list.append(500)
+	>>> new_list
+	[500]
