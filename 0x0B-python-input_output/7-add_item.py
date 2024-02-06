@@ -2,9 +2,9 @@
 """ this is a module for reaading files """
 
 
+import sys
 save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
-import sys
 
 
 def add_items_to_list(filename, *items):
@@ -16,6 +16,7 @@ def add_items_to_list(filename, *items):
 
     current_list.extend(items)
     save_to_json_file(current_list, filename)
+
 
 if __name__ == "__main__":
     filename = "add_item.json"
