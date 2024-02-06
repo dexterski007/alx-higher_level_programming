@@ -29,5 +29,5 @@ class Student:
     def reload_from_json(self, json):
         """ public method """
         for key, value in json.items():
-            if  key in self.__dict__:
+            if key in self.__dict__:
                 self.__dict__[key] = value
