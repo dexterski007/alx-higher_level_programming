@@ -308,7 +308,7 @@ and 'height'"
         self.assertEqual(str(rec1), "[Rectangle] (12) 2/1 - 4/6")
 
         rec2 = Rectangle(5, 5, 1)
-        self.assertEqual(str(rec), "[Rectangle] (1) 1/0 - 5/5")
+        self.assertEqual(str(rec2), "[Rectangle] (1) 1/0 - 5/5")
 
     def test22_update(self):
         """ test update """
