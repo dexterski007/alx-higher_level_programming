@@ -118,7 +118,7 @@ class testingbase(unittest.TestCase):
         with self.assertRaises(TypeError) as excep:
             Base.from_json_string()
         err = "from_json_string() missing 1 required positional argument: \
-        'json_string'"
+               'json_string'"
         self.assertEqual(str(excep.exception), err)
 
         self.assertEqual(Base.from_json_string(None), [])
