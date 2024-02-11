@@ -118,7 +118,6 @@ class Base:
             t.penup()
             t.setpos(s.x + t.pos()[0], s.y - t.pos()[1])
             t.pendown()
-            t.beginfill()
             t.fd(s.width)
             t.left(90)
             t.fd(s.height)
