@@ -125,11 +125,10 @@ class testingbase(unittest.TestCase):
         self.assertEqual(Base.from_json_string(""), [])
 
         st1 = '[{"x": 10, "y": 12, "width": 13, "id": 14, "height": 5}, \
-              {"x": 54, "y": 231, "width": 54, "id": 8978, \
-              "height": 215}]'
-        st2= [{'x': 10, 'y': 12, 'width': 13, 'id': 14, 'height': 5}, \
+{"x": 54, "y": 231, "width": 54, "id": 8978, "height": 215}]'
+        st2= [{'x': 10, 'y': 12, 'width': 13, 'id': 14, 'height': 5},
               {'x': 54, 'y': 231, 'width': 54, 'id': 8978,
-             'height': 215}]
+              'height': 215}]
         self.assertEqual(Base.from_json_string(st1), st2)
 
         st1 = [{}, {}]
