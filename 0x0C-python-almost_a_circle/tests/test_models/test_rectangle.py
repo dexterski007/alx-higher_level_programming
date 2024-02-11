@@ -134,7 +134,7 @@ and 'height'"
         self.assertEqual(rec1.x, 7)
         self.assertEqual(rec1.y, 8)
 
-    def test9_tuples(self):
+    def varioustypes(self):
         """ test for tuples """
         t = (3.16, -1.1, float('inf'), float('-inf'), False, "xsfg", (2,),
              [6], {6}, {6: 7}, None)
@@ -146,7 +146,7 @@ and 'height'"
         attributes = ["x", "y", "width", "height"]
         for attribute in attributes:
             msg = "{} must be an integer".format(attribute)
-            for invalid_type in self.invalid_types():
+            for invalid_type in self.varioustypes():
                 with self.assertRaises(TypeError) as excp:
                     setattr(rec1, attribute, invalid_type)
                 self.assertEqual(str(excp.exception), msg)
