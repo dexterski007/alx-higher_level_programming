@@ -117,6 +117,7 @@ class Base:
             red = int(randrange(255))
             green = int(randrange(255))
             blue = int(randrange(255))
+            t.colormode(255)
             t = turtle.Turtle()
             t.color(red, green, blue)
             t.pensize(5)
