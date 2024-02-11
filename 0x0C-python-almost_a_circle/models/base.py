@@ -113,12 +113,12 @@ class Base:
         import time
 
         turtle.getscreen()
+        turtle.colormode(255)
         for s in list_rectangles + list_squares:
             red = int(randrange(255))
             green = int(randrange(255))
             blue = int(randrange(255))
             t = turtle.Turtle()
-            t.colormode(255)
             t.color(red, green, blue)
             t.pensize(5)
             t.penup()
