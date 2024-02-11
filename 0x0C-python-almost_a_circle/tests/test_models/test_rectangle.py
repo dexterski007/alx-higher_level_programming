@@ -35,7 +35,7 @@ and 'height'"
 
     def test_D_instantiation(self):
         """ test instant"""
-        rec1 = Rectangle(55, 66)
+        rec1 = Rectangle(66, 55)
         self.assertEqual(str(type(rec1)), "<class 'models.rectangle.Rectangle'>")
         self.assertTrue(isinstance(rec1, Base))
         tab = {'_Rectangle__height': 55, '_Rectangle__width': 66,
