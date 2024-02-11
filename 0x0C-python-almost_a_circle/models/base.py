@@ -104,3 +104,32 @@ class Base:
                            "y": row[3]}
                 export.append(cls.create(**dic))
         return export
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """ turtle drawer """
+        import turtle
+        import time
+
+        turtle.getscreen()
+        t.title("Shape drawer")
+        for s in list_rectangles + list_squares:
+            t = turtle.Turtle()
+            t.pensize(10)
+            t.penup()
+            t.setpos(s.x + t.pos()[0], s.y + t.pos([1]))
+            t.pendown()
+            t.beginfill()
+            t.fd(s.width)
+            t.left(90)
+            t.fd(s.height)
+            t.left(90)
+            t.fd(s.width)
+            t.left(90)
+            t.fd(s.height)
+            t.left(90)
+            t.endfill()
+        time.sleep()
+
+
+            
