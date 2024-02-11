@@ -20,7 +20,7 @@ class Base:
     def to_json_string(list_dictionaries):
         """ json exporter """
         if not list_dictionaries or list_dictionaries is None:
-            return []
+            return '[]'
         else:
             return json.dumps(list_dictionaries)
 
