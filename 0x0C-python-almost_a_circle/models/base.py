@@ -114,9 +114,9 @@ class Base:
 
         turtle.getscreen()
         for s in list_rectangles + list_squares:
-            red = randrange(255)
-            green = randrange(255)
-            blue = randrange(255)
+            red = "#{:02x}".format(randrange(255))
+            green = "#{:02x}".format(randrange(255))
+            blue = "#{:02x}".format(randrange(255))
             t = turtle.Turtle()
             t.color(red, green, blue)
             t.pensize(5)
