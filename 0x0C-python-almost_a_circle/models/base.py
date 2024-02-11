@@ -113,7 +113,6 @@ class Base:
 
         turtle.getscreen()
         t = turtle.Turtle()
-        t.title("Shape drawer")
         for s in list_rectangles + list_squares:
             t.pensize(10)
             t.penup()
