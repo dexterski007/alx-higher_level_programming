@@ -131,9 +131,9 @@ class testingbase(unittest.TestCase):
               'height': 215}]
         self.assertEqual(Base.from_json_string(st1), st2)
 
-        d = [{}, {}]
-        s = '[{}, {}]'
-        self.assertEqual(Base.from_json_string(s), d)
+        st2 = [{}, {}]
+        st1 = '[{}, {}]'
+        self.assertEqual(Base.from_json_string(st1), st2)
         st2 = [{}]
         st1 = '[{}]'
         self.assertEqual(Base.from_json_string(st1), st2)
