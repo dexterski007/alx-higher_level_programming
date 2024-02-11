@@ -201,10 +201,10 @@ and 'height'"
     def test16_area(self):
         """ test area """
         rec = Rectangle(5, 6)
-        with self.assertRaises(TypeError) as e:
+        with self.assertRaises(TypeError) as excp:
             Rectangle.area()
         msg = "area() missing 1 required positional argument: 'self'"
-        self.assertEqual(str(e.exception), msg)
+        self.assertEqual(str(excp.exception), msg)
 
     def test17_area(self):
         """ test areaaa"""
@@ -236,13 +236,13 @@ and 'height'"
     def test18_displ(self):
         """ test display"""
         rec = Rectangle(9, 8)
-        with self.assertRaises(TypeError) as e:
+        with self.assertRaises(TypeError) as excp:
             Rectangle.display()
         msg = "display() missing 1 required positional argument: 'self'"
-        self.assertEqual(str(e.exception), msg)
+        self.assertEqual(str(excp.exception), msg)
 
-    def test_J_display_simple(self):
-        '''Tests display() method output.'''
+    def test19_displ(self):
+        """ test display """
         rec = Rectangle(1, 1)
         outp = io.StringIO()
         with redirect_stdout(outp):
@@ -282,6 +282,216 @@ and 'height'"
        #####
 """
         self.assertEqual(outp.getvalue(), msg)
+
+    def test20_posit(self):
+        """ test posit """
+        rec = Rectangle(5, 2)
+        with self.assertRaises(TypeError) as excp:
+            Rectangle.__str__()
+        msg = "__str__() missing 1 required positional argument: 'self'"
+        self.assertEqual(str(excp.exception), msg)
+
+    def test21_posit(self):
+        """ test posit """
+        rec = Rectangle(5, 2)
+        msg = '[Rectangle] (1) 0/0 - 5/2'
+        self.assertEqual(str(rec), msg)
+        rec = Rectangle(1, 1, 1)
+        msg = '[Rectangle] (2) 1/0 - 1/1'
+        self.assertEqual(str(rec), msg)
+        rec = Rectangle(3, 4, 5, 6)
+        msg = '[Rectangle] (3) 5/6 - 3/4'
+        self.assertEqual(str(rec), msg)
+
+        Base._Base__nb_objects = 0
+        rec1 = Rectangle(4, 6, 2, 1, 12)
+        self.assertEqual(str(rec1), "[Rectangle] (12) 2/1 - 4/6")
+
+        rec2 = Rectangle(5, 5, 1)
+        self.assertEqual(str(rec), "[Rectangle] (1) 1/0 - 5/5")
+
+    def test22_update(self):
+        """ test update """
+        rec = Rectangle(6, 2)
+        with self.assertRaises(TypeError) as excp:
+            Rectangle.update()
+        msg = "update() missing 1 required positional argument: 'self'"
+        self.assertEqual(str(excp.exception), msg)
+
+        dicti = rec.__dict__.copy()
+        rec.update()
+        self.assertEqual(rec.__dict__, dicti)
+
+    def test23_updateargs(self):
+        """ test updaate """
+        rec = Rectangle(15, 2)
+        dicti = rec.__dict__.copy()
+
+        rec.update(10)
+        dicti["id"] = 10
+        self.assertEqual(rec.__dict__, dicti)
+
+        rec.update(10, 5)
+        dicti["_Rectangle__width"] = 5
+        self.assertEqual(rec.__dict__, dicti)
+
+        rec.update(10, 5, 17)
+        dicti["_Rectangle__height"] = 17
+        self.assertEqual(rec.__dict__, dicti)
+
+        rec.update(10, 5, 17, 20)
+        dicti["_Rectangle__x"] = 20
+        self.assertEqual(rec.__dict__, dicti)
+
+        rec.update(10, 5, 17, 20, 25)
+        dicti["_Rectangle__y"] = 25
+        self.assertEqual(rec.__dict__, dicti)
+
+    def test24_testargs(self):
+        """ test update args """
+        rec = Rectangle(5, 2)
+        dicti = rec.__dict__.copy()
+
+        rec.update(10)
+        dicti["id"] = 10
+        self.assertEqual(rec.__dict__, dicti)
+
+        with self.assertRaises(ValueError) as excp:
+            rec.update(10, -5)
+        msg = "width must be > 0"
+        self.assertEqual(str(excp.exception), msg)
+
+        with self.assertRaises(ValueError) as excp:
+            rec.update(10, 5, -17)
+        msg = "height must be > 0"
+        self.assertEqual(str(excp.exception), msg)
+
+        with self.assertRaises(ValueError) as excp:
+            rec.update(10, 5, 17, -20)
+        msg = "x must be >= 0"
+        self.assertEqual(str(excp.exception), msg)
+
+        with self.assertRaises(ValueError) as excp:
+            rec.update(10, 5, 17, 20, -25)
+        msg = "y must be >= 0"
+        self.assertEqual(str(excp.exception), msg)
+
+    def test25_update(self):
+        """ test update args """
+        rec = Rectangle(5, 2)
+        dicti = rec.__dict__.copy()
+
+        rec.update(id=10)
+        dicti["id"] = 10
+        self.assertEqual(rec.__dict__, dicti)
+
+        rec.update(width=5)
+        dicti["_Rectangle__width"] = 5
+        self.assertEqual(rec.__dict__, dicti)
+
+        rec.update(height=17)
+        dicti["_Rectangle__height"] = 17
+        self.assertEqual(rec.__dict__, dicti)
+
+        rec.update(x=20)
+        dicti["_Rectangle__x"] = 20
+        self.assertEqual(rec.__dict__, dicti)
+
+        rec.update(y=25)
+        dicti["_Rectangle__y"] = 25
+        self.assertEqual(rec.__dict__, dicti)
+
+    def test26_update(self):
+        """ test kwargs """
+        rec = Rectangle(5, 2)
+        dicti = rec.__dict__.copy()
+
+        rec.update(id=10)
+        dicti["id"] = 10
+        self.assertEqual(rec.__dict__, dicti)
+
+        rec.update(id=10, width=5)
+        dicti["_Rectangle__width"] = 5
+        self.assertEqual(rec.__dict__, dicti)
+
+        rec.update(id=10, width=5, height=17)
+        dicti["_Rectangle__height"] = 17
+        self.assertEqual(rec.__dict__, dicti)
+
+        rec.update(id=10, width=5, height=17, x=20)
+        dicti["_Rectangle__x"] = 20
+        self.assertEqual(rec.__dict__, dicti)
+
+        rec.update(id=10, width=5, height=17, x=20, y=25)
+        dicti["_Rectangle__y"] = 25
+        self.assertEqual(rec.__dict__, dicti)
+
+        rec.update(y=25, id=10, height=17, x=20, width=5)
+        self.assertEqual(rec.__dict__, dicti)
+
+        Base._Base__nb_objects = 0
+        rec1 = Rectangle(10, 10, 10, 10)
+        self.assertEqual(str(rec1), "[Rectangle] (1) 10/10 - 10/10")
+
+        rec1.update(height=1)
+        self.assertEqual(str(rec1), "[Rectangle] (1) 10/10 - 10/1")
+
+        rec1.update(width=1, x=2)
+        self.assertEqual(str(rec1), "[Rectangle] (1) 2/10 - 1/1")
+
+        rec1.update(y=1, width=2, x=3, id=89)
+        self.assertEqual(str(rec1), "[Rectangle] (89) 3/1 - 2/1")
+
+        rec1.update(x=1, height=2, y=3, width=4)
+        self.assertEqual(str(rec1), "[Rectangle] (89) 1/3 - 4/2")
+
+        Base._Base__nb_objects = 0
+        rec1 = Rectangle(10, 10, 10, 10)
+        self.assertEqual(str(rec1), "[Rectangle] (1) 10/10 - 10/10")
+
+        rec1.update(89)
+        self.assertEqual(str(rec1), "[Rectangle] (89) 10/10 - 10/10")
+
+        rec1.update(89, 2)
+        self.assertEqual(str(rec1), "[Rectangle] (89) 10/10 - 2/10")
+
+        rec1.update(89, 2, 3)
+        self.assertEqual(str(rec1), "[Rectangle] (89) 10/10 - 2/3")
+
+        rec1.update(89, 2, 3, 4)
+        self.assertEqual(str(rec1), "[Rectangle] (89) 4/10 - 2/3")
+
+        rec1.update(89, 2, 3, 4, 5)
+        self.assertEqual(str(rec1), "[Rectangle] (89) 4/5 - 2/3")
+
+    def test27_todict(self):
+        """ test to dict"""
+        with self.assertRaises(TypeError) as excp:
+            Rectangle.to_dictionary()
+        msg = "to_dictionary() missing 1 required positional argument: 'self'"
+        self.assertEqual(str(excp.exception), msg)
+
+        rec = Rectangle(1, 2)
+        dicti = {'x': 0, 'y': 0, 'width': 1, 'id': 1, 'height': 2}
+        self.assertEqual(rec.to_dictionary(), dicti)
+
+        rec = Rectangle(1, 2, 3, 4, 5)
+        dicti = {'x': 3, 'y': 4, 'width': 1, 'id': 5, 'height': 2}
+        self.assertEqual(rec.to_dictionary(), dicti)
+
+        rec.x = 10
+        rec.y = 20
+        rec.width = 30
+        rec.height = 40
+        dicti = {'x': 10, 'y': 20, 'width': 30, 'id': 5, 'height': 40}
+        self.assertEqual(rec.to_dictionary(), dicti)
+
+        rec1 = Rectangle(10, 2, 1, 9)
+        r1_dictionary = rec1.to_dictionary()
+        rec2 = Rectangle(1, 1)
+        rec2.update(**r1_dictionary)
+        self.assertEqual(str(rec1), str(rec2))
+        self.assertNotEqual(rec1, rec2)
 
 
 if __name__ == "__main__":
