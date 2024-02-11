@@ -109,12 +109,15 @@ class Base:
     def draw(list_rectangles, list_squares):
         """ turtle drawer """
         import turtle
+        from random import randrange
         import time
 
         turtle.getscreen()
-        t = turtle.Turtle()
         for s in list_rectangles + list_squares:
-            t.pensize(10)
+            t = turtle.Turtle()
+            t.color((randrange(255), randrange(255), randrange(255)))
+            t.pensize(5)
+            t.penup()
             t.setpos(s.x + t.pos()[0], s.y - t.pos()[1])
             t.pendown()
             t.fd(s.width)
