@@ -112,9 +112,9 @@ class Base:
         import time
 
         turtle.getscreen()
+        t = turtle.Turtle()
         t.title("Shape drawer")
         for s in list_rectangles + list_squares:
-            t = turtle.Turtle()
             t.pensize(10)
             t.penup()
             t.setpos(s.x + t.pos()[0], s.y + t.pos([1]))
