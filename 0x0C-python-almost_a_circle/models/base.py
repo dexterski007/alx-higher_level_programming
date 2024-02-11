@@ -114,8 +114,11 @@ class Base:
 
         turtle.getscreen()
         for s in list_rectangles + list_squares:
+            red = randrange(255)
+            green = randrange(255)
+            blue = randrange(255)
             t = turtle.Turtle()
-            t.color((randrange(255), randrange(255), randrange(255)))
+            t.color(red, green, blue)
             t.pensize(5)
             t.penup()
             t.setpos(s.x + t.pos()[0], s.y - t.pos()[1])
