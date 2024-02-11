@@ -129,7 +129,4 @@ class Base:
             t.fd(s.height)
             t.left(90)
             t.endfill()
-        time.sleep()
-
-
-            
+        time.sleep(5)
