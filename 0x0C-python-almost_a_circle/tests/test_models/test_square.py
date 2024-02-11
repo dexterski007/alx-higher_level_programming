@@ -122,12 +122,12 @@ class testingsqu(unittest.TestCase):
         attributes = ["x", "y"]
         for attribute in attributes:
             msg = "{} must be an integer".format(attribute)
-            for invalid_type in self.invalid_types():
+            for invalid_type in self.testing_types():
                 with self.assertRaises(TypeError) as excp:
                     setattr(rec, attribute, invalid_type)
                 self.assertEqual(str(excp.exception), msg)
         msg = "width must be an integer"
-        for invalid_type in self.invalid_types():
+        for invalid_type in self.testing_types():
             with self.assertRaises(TypeError) as excp:
                 setattr(rec, "width", invalid_type)
             self.assertEqual(str(excp.exception), msg)
