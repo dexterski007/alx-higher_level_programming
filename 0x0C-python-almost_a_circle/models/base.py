@@ -116,7 +116,7 @@ class Base:
         for s in list_rectangles + list_squares:
             t.pensize(10)
             t.penup()
-            t.setpos(s.x + t.pos([0]), s.y + t.pos([1]))
+            t.setpos(s.x + t.pos()[0], s.y - t.pos()[1])
             t.pendown()
             t.beginfill()
             t.fd(s.width)
