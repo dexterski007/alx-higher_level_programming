@@ -139,7 +139,7 @@ class testingbase(unittest.TestCase):
         self.assertEqual(Base.from_json_string(st1), st2)
 
         st2 = [{"hello": 9696696969}, {"world": 123}, {"HEY": 0}]
-        st1 = '[{"hello": 9696696969}, {"world": 123}, {"HI": 0}]'
+        st1 = '[{"hello": 9696696969}, {"world": 123}, {"HEY": 0}]'
         self.assertEqual(Base.from_json_string(st1), st2)
 
         st2 = [{"hello": 9696696969}]
