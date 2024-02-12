@@ -65,7 +65,7 @@ class Base:
         if not path.isfile(filename):
             return []
         with open(filename, mode="r", encoding="utf-8") as file:
-            return [cls.create(**inst) for inst\
+            return [cls.create(**inst) for inst
                     in cls.from_json_string(file.read())]
 
     @classmethod
@@ -78,10 +78,10 @@ class Base:
                 list_objs = [[obj.id, obj.width, obj.height, obj.x,
                               obj.y] for obj in list_objs]
             else:
-                list_objs = [[obj.id, obj.size, obj.x, obj.y] for\
-                              obj in list_objs]
+                list_objs = [[obj.id, obj.size, obj.x, obj.y] for
+                             obj in list_objs]
         filename = cls.__name__ + ".csv"
-        with open(filename, mode="w", encoding="utf-8", newline ='') as file:
+        with open(filename, mode="w", encoding="utf-8", newline='') as file:
             writer = csv.writer(file)
             writer.writerows(list_objs)
 
