@@ -15,7 +15,7 @@ def db_run(username, password, db_name):
     Base.metadata.bind = engine
     session = sessionmaker(bind=engine)()
     instance = session.query(State.name, City.id, City.name).\
-                             filter(State.id == City.state_id)
+        filter(State.id == City.state_id)
     for obj in instance:
         print("{}: ({}) {}".format(obj[0], obj[1], obj[2]))
 
