@@ -9,7 +9,7 @@ def connect_db(username, password, db_name):
     db = MySQLdb.connect(host="localhost", port=3306, user=username,
                          passwd=password, db=db_name)
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states WHERE id > 3 ORDER BY id ASC")
+    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
     rows = cursor.fetchall()
     for row in rows:
         print(row)
