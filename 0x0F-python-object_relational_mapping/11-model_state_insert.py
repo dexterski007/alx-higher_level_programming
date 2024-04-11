@@ -16,7 +16,7 @@ def db_run(username, password, db_name):
     new_state = State(name="Louisiana")
     session.add(new_state)
     session.commit()
-    
+
     print(new_state.id)
 
 
