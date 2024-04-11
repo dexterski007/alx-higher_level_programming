@@ -13,7 +13,8 @@ def db_run(username, password, db_name):
                            pool_pre_ping=True)
     Base.metadata.bind = engine
     session = sessionmaker(bind=engine)()
-    output = session.query(State).order_by(State.id).filter(State.name.like('%a%'))
+    output = session.query(State).order_by(State.id).\
+        filter(State.name.like('%a%'))
     for out in output:
         print("{}: {}".format(out.id, out.name))
 
