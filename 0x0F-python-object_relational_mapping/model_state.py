@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
-""" states class """
 
 
 Base = declarative_base()
 
 
+""" states class """
 class State(Base):
     """ a class for new state """
     __tablename__ = 'states'
