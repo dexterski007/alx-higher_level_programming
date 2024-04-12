@@ -1,12 +1,11 @@
 #!/usr/bin/python3
 """ states class """
-from sqlalchemy import Column, Integer, String, MetaData
+from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 
 
-meta_dat = MetaData()
-Base = declarative_base(metadata=meta_dat)
+Base = declarative_base()
 
 
 class State(Base):
