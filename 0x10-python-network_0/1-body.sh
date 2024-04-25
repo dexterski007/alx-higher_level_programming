@@ -1,3 +1,3 @@
 #!/bin/bash
 # curling body size
-curl -L "$1"
+curl -sL "$1"
