@@ -1,3 +1,3 @@
 #!/bin/bash
 # curling response
-curl -sL "$1"
+curl -X DELETE "$1"
