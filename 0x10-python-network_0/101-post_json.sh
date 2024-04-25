@@ -1,3 +1,3 @@
 #!/bin/bash
 # curling methods
-curl -H "Content-Type: application/json" --data @"$2" "$1"
+curl -sH "Content-Type: application/json" --data @"$2" "$1"
