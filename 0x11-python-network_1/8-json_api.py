@@ -7,9 +7,8 @@ import sys
 if __name__ == "__main__":
 
     url = 'http://0.0.0.0:5000/search_user'
-    req = sys.argv[1]
-    if req is None:
-        req = ""
+    req = sys.argv[1] if len(sys.argv) > 1 else ""
+
     payload = {'q': req}
     resp = requests.post(url, data=req)
     try:
