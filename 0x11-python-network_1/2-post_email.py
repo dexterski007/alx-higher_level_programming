@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" status using urllib """
+"""mail using urllib """
 
 
 import urllib.parse
@@ -10,9 +10,10 @@ if __name__ == "__main__":
     url = sys.argv[1]
     mail = sys.argv[2]
 
-    data = urllib.parse.urlencode({'email': mail}).encode('utf-8')
+    data = urllib.parse.urlencode({"email": mail}).encode('utf-8')
 
-    with urllib.request.urlopen(url, data=data) as response:
+    """req = urllib.request.Request(url, data)"""
+    with urllib.request.urlopen(url, data) as response:
         resp = response.read().decode('utf-8')
 
     print(resp)
