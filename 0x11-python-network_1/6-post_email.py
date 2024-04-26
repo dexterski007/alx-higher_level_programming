@@ -11,4 +11,4 @@ if __name__ == "__main__":
 
     resp = requests.post(url, mail)
 
-    print(resp)
+    print(resp.text)
