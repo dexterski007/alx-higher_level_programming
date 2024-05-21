@@ -10,13 +10,13 @@ req(`${url}${movieid}/`, (error, response, body) => {
     const jsonfile = JSON.parse(body);
     const charas = jsonfile.characters;
     for (const item of charas) {
-        req.get(item, (error, response, body1) => {
-          if (error) {
-            console.error(error);
-          }
-          const data = JSON.parse(body1);
-          console.log(data.name);
-        });
-      }
+      req.get(item, (error, response, body1) => {
+        if (error) {
+          console.error(error);
+        }
+        const data = JSON.parse(body1);
+        console.log(data.name);
+      });
     }
-  });
+  }
+});
