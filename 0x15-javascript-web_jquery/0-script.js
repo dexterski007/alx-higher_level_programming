@@ -1,4 +1,4 @@
-let headercolor = document.querySelector('header');
+const headercolor = document.querySelector('header');
 if (headercolor) {
-	headercolor.style.color = '#FF0000';
+  headercolor.style.color = '#FF0000';
 }
